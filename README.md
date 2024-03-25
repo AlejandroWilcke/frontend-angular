@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.1.
 
 ## Setup
-`git pull https://github.com/AlejandroWilcke/frontend-angular.git`
+`git clone https://github.com/AlejandroWilcke/frontend-angular.git`
 
 `cd frontend-angular`
 
