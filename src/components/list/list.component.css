@@ -1,0 +1,38 @@
+.list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e0dfdf;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 600px;
+    gap: 15px;
+    
+}
+
+.select-category {
+    width: 200px;
+}
+
+.select-limit {
+    width: 80px;
+}
+
+.title {
+    font-size: x-large;
+}
+
+table {
+    width: 100%;
+}

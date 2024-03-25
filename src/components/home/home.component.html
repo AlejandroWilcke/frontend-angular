@@ -1,0 +1,26 @@
+<div>
+  <h1 class="title">Login Form</h1>
+  <h3 class="description">Angular Demo</h3>
+  <form class="form-container" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <img class="form-logo" src="../assets/images/penguin.png" alt="LoginForm Logo not found">
+    <div>
+      <input type="email" id="email" formControlName="email" placeholder="Email">
+    </div>
+    <div>
+      <input type="password" id="password" formControlName="password" placeholder="Password">
+      <div>
+        <div *ngIf="loginForm.get('password')?.hasError('minlength')" class="error">
+          {{ errorMessages.minlength }}
+        </div>          
+        <div *ngIf="loginForm.get('email')?.hasError('requiredEmail')" class="error">
+          {{ errorMessages.requiredEmail }}
+        </div>
+        <div *ngIf="loginForm.get('password')?.hasError('invalidCredentials')" class="error">
+          {{ errorMessages.invalidCredentials }}
+        </div>
+      </div>
+    </div>
+    <button type="submit">Login</button>
+    <p class="helper">user: <strong>user&#64;demo.com</strong> pass:<strong>123456</strong></p>
+  </form>
+</div>

@@ -1,0 +1,45 @@
+<div class="list-container">
+  <div class="header-container">
+    <h1 class="title">Products List</h1>
+    <button class="btn btn-danger" type="button" (click)="handleLogout()">Logout</button>
+  </div>
+  <div class="filter-container">
+    <span>Category:</span>
+    <select class="form-select select-category" (change)="handleChangeCategory($event)">
+      <option value="">All</option>
+      <option *ngFor="let category of categories" value={{category}}>{{ category }}</option>
+    </select>
+    <select class="form-select select-limit" (change)="handleChangeLimit($event)">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="20" selected>20</option>
+    </select>
+  </div>
+  <table mat-table [dataSource]="products" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef> Title </th>
+      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef> Category </th>
+      <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+    </ng-container>
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+    </ng-container>
+    <ng-container matColumnDef="button">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <button class="btn btn-success" (click)="openModal(element)">Open</button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
